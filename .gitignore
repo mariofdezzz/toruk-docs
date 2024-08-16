@@ -1,0 +1,13 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+package-lock.json
+.vitepress/cache
+
+# logs
+npm-debug.log*
+
+# macos
+.DS_Store
