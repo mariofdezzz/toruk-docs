@@ -28,6 +28,16 @@ export default defineConfig({
             { text: 'Why Toruk?', link: '/guide/why-toruk' },
             { text: 'Quick Start', link: '/guide/' },
           ]
+        },
+        {
+          text: 'Essentials',
+          items: [
+            { text: 'Routing Syntax', link: '/guide/essentials/routing-syntax' },
+            { text: 'Routes', link: '/guide/essentials/routes' },
+            { text: 'Handlers', link: '/guide/essentials/handlers' },
+            { text: 'Middlewares', link: '/guide/essentials/middlewares' },
+            { text: 'Error Handling', link: '/guide/essentials/error-handling' },
+          ]
         }
       ],
       '/examples/': [
