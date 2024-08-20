@@ -1,8 +1,8 @@
 # Middlewares
 
-Middlewares are functions that can be used to modify requests and responses. By default, [Toruk provides multiple middlewares](/guide/built-in-middlewares) to help you handle common tasks.
+Middlewares are functions that can be used to modify requests and responses. By default, [Toruk provides multiple middlewares](/guide/built-in-middlewares/index) to help you handle common tasks.
 
-Middlewares can be registered at the **app level** or at the **route level**, by using `use` keyword .
+Middlewares can be registered at the **app level** or at the **route level**, by using `use` keyword.
 
 ```ts
 import { App } from 'https://deno.land/x/toruk/mod.ts'

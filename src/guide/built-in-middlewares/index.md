@@ -29,8 +29,8 @@ next:
 
 ### Observability
 
-- [Logger](/guide/built-in-middlewares/logging#logger)
-- [Timing](/guide/built-in-middlewares/logging#timing)
+- [Logger](/guide/built-in-middlewares/observability#logger)
+- [Timing](/guide/built-in-middlewares/observability#timing)
 
 ### Validation
 
