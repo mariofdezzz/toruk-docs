@@ -30,7 +30,7 @@ return Response.redirect('/')
 ```
 
 ::: tip 💬 Info
-For more complex responses like streams, visit Deno docs.
+For more complex responses like Streams, visit Deno docs.
 :::
 
 ## Parameters

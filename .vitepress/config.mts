@@ -33,10 +33,26 @@ export default defineConfig({
           text: 'Essentials',
           items: [
             { text: 'Routing Syntax', link: '/guide/essentials/routing-syntax' },
-            { text: 'Routes', link: '/guide/essentials/routes' },
             { text: 'Handlers', link: '/guide/essentials/handlers' },
-            { text: 'Middlewares', link: '/guide/essentials/middlewares' },
             { text: 'Error Handling', link: '/guide/essentials/error-handling' },
+            { text: 'Middlewares', link: '/guide/essentials/middlewares' },
+          ]
+        },
+        {
+          text: 'Advanced',
+          items: [
+            { text: 'Custom Middlewares', link: '/guide/advanced/custom-middlewares' },
+          ]
+        },
+        {
+          text: 'Built-in Middlewares',
+          link: '/guide/built-in-middlewares',
+          items: [
+            { text: 'Authentication', link: '/guide/built-in-middlewares/authentication' },
+            { text: 'Documentation', link: '/guide/built-in-middlewares/documentation' },
+            { text: 'Performance', link: '/guide/built-in-middlewares/performance' },
+            { text: 'Observability', link: '/guide/built-in-middlewares/observability' },
+            { text: 'Validation', link: '/guide/built-in-middlewares/validation' },
           ]
         }
       ],
