@@ -10,7 +10,7 @@ import { cors } from 'https://deno.land/x/toruk/middlewares/mod.ts'
 
 // Affects all routes
 new App({
-  router: { /* ... */ },
+  routes: [ /* ... */ ],
   use: [
     cors(),
   ]
@@ -18,17 +18,15 @@ new App({
 
 // Affects only '/user' route
 new App({
-  router: {
-    routes: [
-      {
-        path: '/user',
-        handler: () => new Response('Hello World!'),
-        use: [
-          cors(),
-        ]
-      }
-    ]
-  }
+  routes: [
+    {
+      path: '/user',
+      handler: () => new Response('Hello World!'),
+      use: [
+        cors(),
+      ]
+    }
+  ]
 }).serve()
 ```
 
@@ -41,7 +39,7 @@ import { App } from 'https://deno.land/x/toruk/mod.ts'
 import { cors, jwt } from 'https://deno.land/x/toruk/middlewares/mod.ts'
 
 new App({
-  router: { /* ... */ },
+  routes: [ /* ... */ ],
   use: [
     cors(),
     jwt(),
@@ -75,8 +73,8 @@ Middlewares can emit parameters that can be used by the route **handler**.
 Each middleware provides typings. You can combine them with `Handler` to strongly type the parameters.
 
 ```ts
-import { Handler } from 'https://deno.land/x/toruk/mod.ts'
-import { UseJWT } from 'https://deno.land/x/toruk/middlewares/mod.ts'
+import type { Handler } from 'https://deno.land/x/toruk/mod.ts'
+import type { UseJWT } from 'https://deno.land/x/toruk/middlewares/mod.ts'
 
 const handler: Handler<'/private/me/username', [ UseJWT ]> = async ({ jwt }) => {
   return Response.json({ username: jwt.payload.username })

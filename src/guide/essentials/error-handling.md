@@ -10,9 +10,7 @@ In order to preserve the HTTP protocol, **you must not change** this behavior. B
 import { App } from 'https://deno.land/x/toruk/mod.ts'
 
 new App({
-  router: {
-    onNotFound: () => new Response('Not Found', { status: 404 })
-  }
+  onNotFound: () => new Response('Not Found', { status: 404 })
 }).serve()
 ```
 

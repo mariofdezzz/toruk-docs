@@ -5,7 +5,7 @@ Toruk uses native [Deno.ServeHandler](https://docs.deno.com/api/deno/~/Deno.Serv
 Handler functions receive an object with **request** and **info** properties. Expects to return a `Response` object and can be async functions. Additionaly, you can use `Handler` type to help you define your handlers.
 
 ```ts
-import { Handler } from 'https://deno.land/x/toruk/mod.ts'
+import type { Handler } from 'https://deno.land/x/toruk/mod.ts'
 
 export const handler: Handler = async function ({ request }) {
   const origin = request.headers.get('origin')
@@ -38,7 +38,7 @@ For more complex responses like Streams, visit Deno docs.
 Paths are matched using [URLPattern](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API) object. This allows different patterns, one of them being parameters *(named groups)*. Parameters are **strongly typed** by default.
 
 ```ts
-import { Handler } from 'https://deno.land/x/toruk/mod.ts'
+import type { Handler } from 'https://deno.land/x/toruk/mod.ts'
 
 export const handler: Handler<'/user/:id'> = async function ({ params }) {
   return new Response(`Hello user Nº ${params.id}!`)
@@ -50,7 +50,7 @@ export const handler: Handler<'/user/:id'> = async function ({ params }) {
 Parameters can be optional:
 
 ```ts
-import { Handler } from 'https://deno.land/x/toruk/mod.ts'
+import type { Handler } from 'https://deno.land/x/toruk/mod.ts'
 
 export const handler: Handler<'/user/:id?'> = async function ({ params }) {
   return new Response(`Hello user Nº ${params.id ?? 'no id provided'}!`)
@@ -62,7 +62,7 @@ export const handler: Handler<'/user/:id?'> = async function ({ params }) {
 If you want to ignore part of the path, you can use wildcards pattern `*`.
 
 ```ts
-import { Handler } from 'https://deno.land/x/toruk/mod.ts'
+import type { Handler } from 'https://deno.land/x/toruk/mod.ts'
 
 export const handler: Handler<'/user/*/name'> = async function () {
   return new Response('Who are you?')
@@ -74,7 +74,7 @@ export const handler: Handler<'/user/*/name'> = async function () {
 Besides regular expressions are allowed, you might check [Regex matchers limitations](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API#regex_matchers_limitations) for edge cases.
 
 ```ts
-import { Handler } from 'https://deno.land/x/toruk/mod.ts'
+import type { Handler } from 'https://deno.land/x/toruk/mod.ts'
 
 // Only matched if `id` is a number, else 404
 export const handler: Handler<'/user/:id(\\d+)'> = async function () {

@@ -10,18 +10,16 @@ To improve code splitting, Toruk provides object routing syntax.
 import { App } from 'https://deno.land/x/toruk/mod.ts'
 
 new App({
-  router: {
-    routes: [
-      {
-        path: '/',
-        handler: () => new Response('Hello World!')
-      }
-    ]
-  }
+  routes: [
+    {
+      path: '/',
+      handler: () => new Response('Hello World!')
+    }
+  ]
 }).serve()
 ```
 
-While this might seem complex at first, it gets sense when you take advantage of the full API provided:
+While it's more complex, it provides a better separation of concerns:
 
 ```ts
 import { App, Router, Handler } from 'https://deno.land/x/toruk/mod.ts'
@@ -42,9 +40,7 @@ const router = new Router({
 })
 
 // app.ts
-new App({
-  router
-}).serve()
+new App(router).serve()
 ```
 
 ::: tip 💬 Info

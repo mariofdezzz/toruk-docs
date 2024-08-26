@@ -50,8 +50,8 @@ export default defineConfig({
           items: [
             { text: 'Authentication', link: '/guide/built-in-middlewares/authentication' },
             { text: 'Documentation', link: '/guide/built-in-middlewares/documentation' },
-            { text: 'Performance', link: '/guide/built-in-middlewares/performance' },
             { text: 'Observability', link: '/guide/built-in-middlewares/observability' },
+            { text: 'Performance', link: '/guide/built-in-middlewares/performance' },
             { text: 'Validation', link: '/guide/built-in-middlewares/validation' },
           ]
         }

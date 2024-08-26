@@ -20,17 +20,17 @@ next:
 
 - [Swagger](/guide/built-in-middlewares/documentation#swagger) <Badge type="warning" text="3rd" />
 
+### Observability
+
+- [Logger](/guide/built-in-middlewares/observability#logger)
+- [Timing](/guide/built-in-middlewares/observability#timing)
+
 ### Performance
 
 - [Body Limit](/guide/built-in-middlewares/performance#body-limit)
 - [Cache](/guide/built-in-middlewares/performance#cache)
 - [ETag](/guide/built-in-middlewares/performance#etag)
 - [Compress](/guide/built-in-middlewares/performance#compress)
-
-### Observability
-
-- [Logger](/guide/built-in-middlewares/observability#logger)
-- [Timing](/guide/built-in-middlewares/observability#timing)
 
 ### Validation
 

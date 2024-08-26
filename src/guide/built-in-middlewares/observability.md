@@ -28,3 +28,45 @@ new App({
 ```
 
 ## Timing
+
+The [Server-Timing](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing) middleware provides performance metrics in the response headers.
+
+::: warning 🚧 WIP
+This feature is under development.
+:::
+
+### Usage
+
+```ts
+import { App } from 'https://deno.land/x/toruk/mod.ts'
+import { timing } from 'https://deno.land/x/toruk/middlewares/mod.ts'
+
+new App({
+  routes: [{
+    path: '/',
+    handler: ({ timing: { startTime, endTime, setMetric } }) => {
+
+      // Start a timer
+      startTime('db')
+      const data = await db.findMany(/* ... */)
+      endTime('db')
+
+      // Set a custom metric
+      setMetric('region', 'europe-west3')
+
+      // Custom metrics measured in milliseconds
+      setMetric('custom', 23.8, 'My custom Metric')
+
+      return Response.json({ data })
+    }
+  }],
+  use: [
+    timing(),
+  ]
+}).serve()
+```
+
+### Output
+
+<!-- TODO -->
+--
